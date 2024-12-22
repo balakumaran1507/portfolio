@@ -1,0 +1,49 @@
+# _config.yml for Balakumaran: Cybersecurity Analyst Portfolio
+
+title: "Balakumaran: Cybersecurity Analyst"
+description: "Welcome to the portfolio of Balakumaran, a Cybersecurity Analyst passionate about safeguarding digital spaces."
+url: "https://your-github-username.github.io" # Replace with your GitHub Pages URL
+
+# Optional: set a baseurl if the website is hosted under a subpath, e.g., /portfolio
+baseurl: "" 
+
+# Your GitHub repository or domain name
+repository: "https://github.com/your-github-username/portfolio" # Replace with your GitHub repository URL
+
+# Set theme (You can choose a theme that suits your portfolio, here I have used a simple theme like "minima")
+theme: "minima"
+
+# Social Media Links
+social_links:
+  twitter: "https://twitter.com/your-twitter-handle"  # Replace with your Twitter handle
+  linkedin: "https://www.linkedin.com/in/your-linkedin-profile"  # Replace with your LinkedIn profile link
+  github: "https://github.com/your-github-username"  # Replace with your GitHub profile URL
+
+# Author information
+author:
+  name: "Balakumaran"
+  title: "Cybersecurity Analyst"
+  email: "balakumaran1507@gmail.com"  # Replace with your email if you'd like it to be visible
+ # photo: "/assets/images/profile.jpg" # Optionally add a profile image in your assets/images folder
+
+# Default permalink for posts
+permalink: /:categories/:year/:month/:day/:title/
+
+# Site's language
+language: "en"
+
+# Pagination (if you plan on having a blog section)
+paginate: 5
+
+# Optional: Google Analytics tracking ID (if you want to track site traffic)
+#google_analytics: "UA-XXXXXXXXX-X" # Replace with your Google Analytics ID
+
+# Optional: SEO settings for better search visibility
+seo:
+  title: "Balakumaran: Cybersecurity Analyst Portfolio"
+  description: "Cybersecurity Analyst with a passion for protecting digital infrastructure and preventing cyber threats."
+  keywords: ["Cybersecurity", "Penetration Testing", "Information Security", "Networking", "Risk Management"]
+ # image: "/assets/images/seo-image.jpg"  # Replace with a relevant image for SEO
+
+# Markdown processor settings
+markdown: kramdown
