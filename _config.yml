@@ -1,5 +1,61 @@
-title: Balakumaran D
-description: B.E CSE (Cybersecurity) |SOC|.
+# _config.yml for Balakumaran D: Cybersecurity Analyst Portfolio
+
+title: "Balakumaran D"
+description: "Cybersecurity Analyst | B.E CSE (Cybersecurity) | SOC | Threat Intelligence | Penetration Testing | Incident Response"
 show_downloads: true
-google_analytics:
-theme: jekyll-theme-hacker
+
+# Theme setting (Customized for a hacker/cybersecurity-themed design)
+theme: "jekyll-theme-hacker"
+
+# Social Media Links
+social_links:
+  twitter: "https://x.com/neuxdemorp78683"  # Replace with your Twitter handle
+  linkedin: "https://www.linkedin.com/in/balakumaran2005/"  # Replace with your LinkedIn profile link
+  github: "https://github.com/balakumaran1507"  # Replace with your GitHub profile URL
+  
+# Author details
+author:
+  name: "Balakumaran D"
+  title: "Cybersecurity Analyst"
+  email: "balakumaran1507@gmail.com"  # Replace with your email
+  photo: "assets/images/145541052.jpeg" # Optionally add a profile image in your assets/images folder
+
+# Site settings
+language: "en"
+
+# Markdown processor settings
+markdown: kramdown
+
+# Pagination settings (if you plan to write blog posts related to cybersecurity topics)
+paginate: 5  # Change number of posts per page as per your preference
+
+# SEO settings
+seo:
+  title: "Balakumaran D: Cybersecurity Analyst Portfolio"
+  description: "Cybersecurity Analyst with expertise in SOC, Threat Intelligence, Incident Response, and Penetration Testing."
+  keywords: ["Cybersecurity", "SOC", "Threat Intelligence", "Penetration Testing", "Information Security", "Incident Response", "Ethical Hacking"]
+  #image: "/assets/images/seo-image.jpg"  # Optional: Image to display in search results
+
+# Optional: Display downloadable resources (like your resume or whitepapers)
+downloads:
+  #resume: "https://your-link-to-resume.com"  # Link to your resume or a downloadable file
+  #certifications: "https://your-link-to-certifications.com"  # Link to your certifications or related files
+
+# Custom Permalink structure (useful if you add blog posts or articles related to cybersecurity)
+permalink: /:categories/:year/:month/:day/:title/
+
+# Optional: Enable or disable disqus (for blog comments, if you plan on having a blog section)
+#comments:
+  #disqus_shortname: "your-disqus-shortname"  # Replace with your Disqus shortname if you want comments enabled
+
+# Optional: Add additional custom content or features
+custom_features:
+  - name: "Security Audits"
+    description: "Learn about my experience conducting security audits for various organizations."
+    link: "/security-audits"  # Link to a page showcasing your work in this field
+  - name: "Penetration Testing"
+    description: "Explore my penetration testing methodologies and case studies."
+    link: "/penetration-testing"  # Link to a page showcasing your penetration testing work
+  - name: "Incident Response"
+    description: "Detailed overview of incident response procedures I follow to mitigate and manage cyber threats."
+    link: "/incident-response"  # Link to a page discussing your incident response skills
