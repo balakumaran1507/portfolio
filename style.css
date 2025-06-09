@@ -1,0 +1,35 @@
+body {
+    background-color: #000;
+    color: #00FF00;
+    font-family: monospace;
+    margin: 20px;
+}
+
+.terminal {
+    max-width: 800px;
+    margin: auto;
+}
+
+#ascii-art {
+    white-space: pre;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.prompt {
+    display: flex;
+    align-items: center;
+}
+
+#prompt-text {
+    margin-right: 8px;
+}
+
+#command-input {
+    background: transparent;
+    border: none;
+    color: #00FF00;
+    font-family: monospace;
+    outline: none;
+    width: 80%;
+}
