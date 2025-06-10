@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Balakumaran CTF Writeups</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: monospace;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .tabs button {
+            background: transparent;
+            border: 1px solid #0f0;
+            color: #0f0;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .tabs button.active {
+            background-color: #0f0;
+            color: #000;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .writeup {
+            margin-bottom: 1rem;
+            border: 1px solid #0f0;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .writeup:hover {
+            background-color: rgba(0, 255, 0, 0.1);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background-color: #000;
+            border: 1px solid #0f0;
+            padding: 20px;
+            max-width: 600px;
+            width: 90%;
+            color: #0f0;
+            position: relative;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal h2 {
+            margin-top: 0;
+        }
+
+        .modal a {
+            color: #0f0;
+            text-decoration: underline;
+        }
+
+        .modal .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #0f0;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CTF Writeups</h1>
+
+    <div class="tabs">
+        <button onclick="showTab('easy')" id="tab-easy" class="active">Easy</button>
+        <button onclick="showTab('medium')" id="tab-medium">Medium</button>
+        <button onclick="showTab('hard')" id="tab-hard">Hard</button>
+    </div>
+
+    <div id="easy" class="tab-content active">
+        <div class="writeup"
+            onclick="openModal('Easy CTF 1', 'A simple walkthrough of an easy web challenge.', 'https://medium.com/@balakumaran/easy-ctf-1')">
+            <h3>Easy CTF 1</h3>
+            <p>Simple walkthrough of an easy web challenge...</p>
+        </div>
+        <div class="writeup"
+            onclick="openModal('Easy CTF 2', 'Basic enumeration and flag capture.', 'https://medium.com/@balakumaran/easy-ctf-2')">
+            <h3>Easy CTF 2</h3>
+            <p>Basic enumeration and flag capture...</p>
+        </div>
+    </div>
+
+    <div id="medium" class="tab-content">
+        <div class="writeup"
+            onclick="openModal('Medium CTF 1', 'Requires privilege escalation.', 'https://medium.com/@balakumaran/medium-ctf-1')">
+            <h3>Medium CTF 1</h3>
+            <p>Requires privilege escalation...</p>
+        </div>
+    </div>
+
+    <div id="hard" class="tab-content">
+        <div class="writeup"
+            onclick="openModal('Hard CTF 1', 'Advanced buffer overflow challenge.', 'https://medium.com/@balakumaran/hard-ctf-1')">
+            <h3>Hard CTF 1</h3>
+            <p>Advanced buffer overflow challenge...</p>
+        </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal" id="modal">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <h2 id="modal-title">CTF Title</h2>
+            <p id="modal-description">CTF Overview Description</p>
+            <p><a href="#" target="_blank" id="modal-link">Read Full Writeup</a></p>
+        </div>
+    </div>
+
+    <script>
+        function showTab(level) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            document.getElementById(level).classList.add('active');
+
+            document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`tab-${level}`).classList.add('active');
+        }
+
+        function openModal(title, description, link) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-description').innerText = description;
+            document.getElementById('modal-link').href = link;
+            document.getElementById('modal-overlay').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').classList.remove('active');
+        }
+
+        // Close modal on Esc key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Optional: Close modal on click outside
+        document.getElementById('modal-overlay').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

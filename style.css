@@ -33,3 +33,47 @@ body {
     outline: none;
     width: 80%;
 }
+/* Sidebar Styles */
+#sidebar {
+    position: fixed;
+    /* makes it float above content */
+    top: 10px;
+    /* distance from the top */
+    right: 10px;
+    /* distance from the right */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* dark semi-transparent background */
+    color: white;
+    /* white text */
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-family: monospace;
+    z-index: 1000;
+    /* ensures it stays on top of other elements */
+}
+
+#sidebar h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+#sidebar ul li {
+    margin: 5px 0;
+}
+
+#sidebar a {
+    color: #66ff66;
+    /* bright green links */
+    text-decoration: none;
+}
+
+#sidebar a:hover {
+    text-decoration: underline; }

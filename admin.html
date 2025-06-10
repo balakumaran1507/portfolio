@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: monospace;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            background-color: #111;
+            color: #0f0;
+            border: 1px solid #0f0;
+        }
+
+        button {
+            background-color: #0f0;
+            color: #000;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #login-box {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Admin Panel ((⚠️WARNING WORK IN PROGRESS⚠️))</h1>
+
+    <div id="login-box">
+        <p>Welcome to Main Dashboard For Authorized Personal Eyes Only...</p>
+    </div>
+
+    <div id="admin-panel">
+        <label for="content-type">Select Content Type:</label>
+        <select id="content-type">
+            <option value="ctf">CTF Writeup</option>
+            <option value="project">Project</option>
+            <option value="certificate">Certificate</option>
+        </select>
+
+        <label for="title">Title:</label>
+        <input type="text" id="title">
+
+        <label for="description">Description:</label>
+        <textarea id="description" rows="5"></textarea>
+
+        <label for="link">External Link:</label>
+        <input type="url" id="link" placeholder="Optional">
+
+        <label for="code">Code Snippet:</label>
+        <textarea id="code" rows="5" placeholder="Optional"></textarea>
+
+        <button onclick="saveContent()">Save Content</button>
+        <button onclick="downloadData()">Download JSON</button>
+    </div>
+
+    <script>
+
+        function saveContent() {
+            const type = document.getElementById('content-type').value;
+            const title = document.getElementById('title').value.trim();
+            const description = document.getElementById('description').value.trim();
+            const link = document.getElementById('link').value.trim();
+            const code = document.getElementById('code').value.trim();
+
+            if (!title || !description) {
+                alert('Title and description are required!');
+                return;
+            }
+
+            const content = {
+                type,
+                title,
+                description,
+                link,
+                code
+            };
+
+            // Load existing data or create new
+            let data = JSON.parse(localStorage.getItem('contentData')) || [];
+            data.push(content);
+            localStorage.setItem('contentData', JSON.stringify(data));
+
+            alert('Content saved locally!');
+            // Clear form
+            document.getElementById('title').value = '';
+            document.getElementById('description').value = '';
+            document.getElementById('link').value = '';
+            document.getElementById('code').value = '';
+        }
+
+        function downloadData() {
+            const data = localStorage.getItem('contentData');
+            if (!data) {
+                alert('No data to download!');
+                return;
+            }
+
+            const blob = new Blob([data], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'contentData.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+
+</html>

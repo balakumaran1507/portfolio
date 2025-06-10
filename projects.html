@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Projects - Balakumaran Portfolio</title>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #00ff00;
+            font-family: monospace;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #1a1a1a;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            padding: 15px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #00ff00;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Projects</h1>
+    <div class="projects-container">
+        <div class="project-card"
+            onclick="window.open('https://github.com/balakumaran1507/CyberVault', '_blank')">
+            <h3>CyberVault</h3>
+            <p>Unified security solutions and tools for modern pentesters and researchers Containing Custom-made keylogger, password_manager, encrypt&decrypt, port_scanners.</p>
+        </div>
+        <div class="project-card" onclick="window.open('https://github.com/balakumaran1507/SIH1637', '_blank')">
+            <h3>SIH1637(2024)</h3>
+            <p>An E-com webapp for framers to list they produce without middle-men developed for Smart India Hackathon.</p>
+        </div>
+        <div class="project-card" onclick="window.open('https://github.com/balakumaran1507/Cybercom-website', '_blank')">
+            <h3>Cybercom Website(Old)</h3>
+            <p>Developed when cybercom was a part of college club used as notice board and ranking system within members.</p>
+        </div>
+        <div class="project-card" onclick="window.open('https://github.com/balakumaran1507/hypervisor_security', '_blank')">
+            <h3>Hypervisor Security</h3>
+            <p>used to detect vms and vm escape and do recon in vms.</p>
+        </div>
+        <div class="project-card" onclick="window.open('https://github.com/balakumaran1507/DNS-Manual-Query', '_blank')">
+            <h3>DNS Manual Query</h3>
+            <p>Developed to Manually Query DNS and understand working of DNS and deepen knowledge in networking</p>
+        </div>
+        <div class="project-card" onclick="window.open('https://github.com/balakumaran1507/stegno', '_blank')">
+            <h3>Stegnography</h3>
+            <p>A program to encode data to images and extract them developed during intern at IBM</p>
+        </div>
+        <div class="project-card" onclick="window.open('https://github.com/balakumaran1507/late_attendace_google_sheet_version', '_blank')">
+            <h3>Google Late Attendance Tracker</h3>
+            <p>Uses Google sheets to Scan Student QR and keeps track of student attendance developed for velammal engineering college</p>
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 Balakumaran | All rights reserved.
+    </footer>
+</body>
+
+</html>
